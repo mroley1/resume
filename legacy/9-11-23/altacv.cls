@@ -47,6 +47,7 @@
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
 
+
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
 \ifxetex
@@ -287,7 +288,7 @@
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
-  \smallskip\normalsize
+  \medskip\normalsize
 }
 
 \newcommand{\cvachievement}[3]{%

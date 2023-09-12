@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1cm,right=1cm,top=1.0cm,bottom=1.0cm,columnsep=0.85cm}
+\geometry{left=1.25cm,right=1.25cm,top=1.3cm,bottom=1.3cm,columnsep=1.2cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -42,9 +42,16 @@
 % Change the colours if you want to
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{drkpurple}{HTML}{7184b3}
+\definecolor{lgtpurple}{HTML}{9baedf}
+\definecolor{lgttan}{HTML}{eed6a4}
+\definecolor{drktan}{HTML}{e1bd60}
+\definecolor{brown}{HTML}{b58837}
+
 \definecolor{DarkTeal}{HTML}{235a54}
 \definecolor{Teal}{HTML}{29bdad}
 \definecolor{BrightYellow}{HTML}{ffc313}
+
 
 \colorlet{tagline}{Teal}
 \colorlet{heading}{DarkTeal}
@@ -52,7 +59,7 @@
 \colorlet{subheading}{Teal}
 \colorlet{accent}{Teal}
 
-\colorlet{emphasis}{SlateGrey}
+\colorlet{emphasis}{LightGrey}
 \colorlet{body}{LightGrey}
 
 % Change some fonts, if necessary
@@ -82,8 +89,7 @@
 
 \begin{document}
 \name{Matthew Oley}
-\tagline{Student at RIT}
-
+\tagline{Second Year Student at RIT}
 %% You can add multiple photos on the left or right
 %\photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
@@ -120,58 +126,60 @@
 }
 
 \makecvheader
-
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-%\AtBeginEnvironment{itemize}{\large}
+% \AtBeginEnvironment{itemize}{\small}
 
-\columnratio{0.6}
+%% Set the left/right column width ratio to 6:4.
+%%\columnratio{0.6}
 
-\begin{paracol}{2}
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+%%\begin{paracol}{1}
+
+
+\cvsection{Education}
+
+\cvevent{Bachelor of Science in Software Engineering}{Rochester Institute of Technology}{Anticipated May 2027}{}
+
+
+\cvsection{Skills and Technologies}
+
+\cvtag{Web Development}
+% \cvtag{REST API}
+\cvtag{Linux}
+\cvtag{Windows}
+\cvtag{SQL}
+\cvtag{GIT}
+\\\smallskip
+\cvtag{Javascript}
+\cvtag{HTML}
+\cvtag{CSS}
+\cvtag{Python}
+\cvtag{Java}
 
 
 \cvsection{Projects}
 
 \cvevent{Online Grimoire}{Personal Project}{}{}
-\cvtag{Javascript}
-\cvtag{Web}
-\cvtag{Open Source}\\\smallskip
 \github{mroley1/Online-Grimoire} \\\smallskip
-Web tool the emulate the game board of the social deduction game
-\\\href{https://bloodontheclocktower.com/}{Blood on the Clocktower}. Built using vanilla Javascript and CSS.
+Web tool the emulate the game board of the social deduction game \href{https://bloodontheclocktower.com/}{Blood on the Clocktower}. Built using vanilla Javascript and CSS.
 
 \divider
 
 \cvevent{Email Widget}{Dallas School District}{}{}
-\cvtag{Web}
-\cvtag{Bootstrap}
-\cvtag{Google Sites}\\\smallskip
 \github{mroley1/emailObscure}\\\smallskip
-Internal web tool that generates a line of HTML to be imbedded in\\
-google sites. Provides functionality to automatically copy and hide\\
+Internal web tool that generates a line of HTML to be embedded in
+google sites. Provides functionality to automatically copy and hide email
 addresses from scrapers.
 
 \divider
 
 \cvevent{Status Dashboard}{Personal Project}{}{}
-\cvtag{Web}
-\cvtag{Bootstrap}
-\cvtag{Google Sites}
-\cvtag{Pterodactyl API}\\\smallskip
 \github{mroley1/minecraft_website} \\\smallskip
-Dashboard that gets information on minecraft servers running off\\
-of my personal Pteridactyl server and visualizes live data on their\\
+Dashboard that gets information on minecraft servers running off
+of my personal Pteridactyl server and visualizes live data on their
 CPU, RAM, and disk usage.
 
-\divider
-
-\cvevent{Sudoku}{Personal Project}{}{}
-\cvtag{Web}
-\cvtag{WASM}
-\cvtag{Yew framework}
-\cvtag{Rust}\\\smallskip
-\github{mroley1/yew-sudoku} \\\smallskip
-Ongoing project to create a working soduku board using the\\
-yew framework.
 
 
 \smallskip
@@ -187,61 +195,31 @@ yew framework.
 \end{itemize}
 
 
-\switchcolumn
+%%\switchcolumn
 
 
-\cvsection{Education}
-
-\cvevent{BS Software Engineering}{Rochester Institute of Technology}{Anticipated May 2027}{}
-
-\divider
-
-\cvevent{High School Diploma}{Dallas High School}{June 2022}{}
 
 
 \cvsection{References}
+\columnratio{0.5}
+
+\begin{paracol}{2}
+\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
+\switchcolumn
+\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
+\end{paracol}
 
 % \cvref{name}{email}{mailing address}
-\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
-\divider
-\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
 
 
-\smallskip
-\cvsection{Skills and\\\smallskip Technologies}
-
-\cvtag{GIT}
-\cvtag{Proxmox}
-\cvtag{Linux}
-\cvtag{Windows}\\\smallskip
-\cvtag{Networking}
-\cvtag{Web Development}
-\cvtag{Yew}
-
-
-\smallskip
-\cvsection{Languages}
-
-\cvachievement{\faJs}{JavaScript}{\href{https://www.github.com/mroley1/Online-Grimoire}{\textcolor{accent}\faGithub mroley1/Online-Grimoire}}
-\divider
-
-\cvachievement{\faHtml5}{HTML / CSS}{\href{https://www.github.com/mroley1/personal-website}{\textcolor{accent}\faGithub mroley1/personal-website}}
-\divider
-
-\cvachievement{\faPython}{Python}{\href{https://www.github.com/mroley1/python-chess-hs}{\textcolor{accent}\faGithub mroley1/python-chess-hs}}
-\divider
-
-\cvachievement{\faRust}{Rust}{\href{https://github.com/mroley1/yew-sudoku}{\textcolor{accent}\faGithub mroley1/yew-sudoku}}
-\divider
-
-\cvachievement{\faJava}{Java}{}
 
 
 %\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
 %{Address Line 1\\Address line 2}
 
 
-\end{paracol}
+
+%%\end{paracol}
 
 
 \end{document}
