@@ -278,15 +278,41 @@
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
 
-% v1.1.4: fixes inconsistent font size
-\newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
-  \smallskip\normalsize
+\newcommand{\cvschool}[6]{%
+  {\large\color{emphasis}#1}
+  \normalsize\smallskip\par
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
+  \textbf{\color{accent}#2}
+  \par
   \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
+  \ifstrequal{#3}{}{}{{\small\makebox[0.25\linewidth][l]{\faCalendar~#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.25\linewidth][l]{\faMapMarker~#4}}}%
+  \ifstrequal{#5}{}{}{{\small\makebox[0.25\linewidth][l]{\faAward~#5}}}%
+  \ifstrequal{#6}{}{}{{\small\makebox[0.25\linewidth][l]{\faScroll~#6}}}\par
+  \smallskip\normalsize
+}
+
+\newcommand{\cvproject}[3]{%
+  {\large\color{emphasis}#1}
+  \normalsize
+  \textbf{\hspace{0.4em}---\hspace{0.3em}}
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}
+  \par}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.25\linewidth][l]{\faCalendar~#3}}}%\par
+  \smallskip\normalsize
+}
+
+% v1.1.4: fixes inconsistent font size
+\newcommand{\cvevent}[6]{%
+  {\large\color{emphasis}#1}
+  \normalsize\smallskip\par
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}
+  \par
+  \smallskip}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.25\linewidth][l]{\faCalendar~#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.25\linewidth][l]{\faMapMarker~#4}}}%\par
   \smallskip\normalsize
 }
 

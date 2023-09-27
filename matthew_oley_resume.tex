@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.3cm,bottom=1.3cm,columnsep=1.2cm}
+\geometry{left=1.25cm,right=1.25cm,top=1.0cm,bottom=1.0cm,columnsep=1.2cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -41,7 +41,7 @@
 
 % Change the colours if you want to
 \definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
+\definecolor{LightGrey}{HTML}{333333}
 \definecolor{drkpurple}{HTML}{7184b3}
 \definecolor{lgtpurple}{HTML}{9baedf}
 \definecolor{lgttan}{HTML}{eed6a4}
@@ -49,17 +49,22 @@
 \definecolor{brown}{HTML}{b58837}
 
 \definecolor{DarkTeal}{HTML}{235a54}
+\definecolor{DarkGreen}{HTML}{205439}
+\definecolor{Blue}{HTML}{4f6285}
 \definecolor{Teal}{HTML}{29bdad}
+\definecolor{Green}{HTML}{375a3a}
+\definecolor{Purple}{HTML}{604873}
+\definecolor{Caramel}{HTML}{5f3c18}
 \definecolor{BrightYellow}{HTML}{ffc313}
 
 
-\colorlet{tagline}{Teal}
-\colorlet{heading}{DarkTeal}
+\colorlet{tagline}{Green}
+\colorlet{heading}{DarkGreen}
 \colorlet{headingrule}{BrightYellow}
-\colorlet{subheading}{Teal}
-\colorlet{accent}{Teal}
+\colorlet{subheading}{Green}
+\colorlet{accent}{Green}
 
-\colorlet{emphasis}{LightGrey}
+%\colorlet{emphasis}{brown}
 \colorlet{body}{LightGrey}
 
 % Change some fonts, if necessary
@@ -89,7 +94,7 @@
 
 \begin{document}
 \name{Matthew Oley}
-\tagline{Second Year Student at RIT}
+\tagline{Second Year Student at RIT seeking summer CO-OP}
 %% You can add multiple photos on the left or right
 %\photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
@@ -139,7 +144,7 @@
 
 \cvsection{Education}
 
-\cvevent{Bachelor of Science in Software Engineering}{Rochester Institute of Technology}{Anticipated May 2027}{}
+\cvschool{Bachelor of Science in Software Engineering}{Rochester Institute of Technology}{Anticipated May 2027}{}{Honors Program}{3.85 GPA}
 
 
 \cvsection{Skills and Technologies}
@@ -151,22 +156,27 @@
 \cvtag{SQL}
 \cvtag{GIT}
 \\\smallskip
-\cvtag{Javascript}
+\cvtag{JavaScript}
 \cvtag{HTML}
 \cvtag{CSS}
 \cvtag{Python}
 \cvtag{Java}
+%\\\smallskip
+%\cvtag{Communication}
+%\cvtag{Problem-solving}
+%\cvtag{Adaptability}
+%\cvtag{Organization}
 
 
 \cvsection{Projects}
 
-\cvevent{Online Grimoire}{Personal Project}{}{}
+\cvproject{Online Grimoire}{Personal Project}{}
 \github{mroley1/Online-Grimoire} \\\smallskip
-Web tool the emulate the game board of the social deduction game \href{https://bloodontheclocktower.com/}{Blood on the Clocktower}. Built using vanilla Javascript and CSS.
+Web tool the emulate the game board of the social deduction game \href{https://bloodontheclocktower.com/}{Blood on the Clocktower}. Built using vanilla JavaScript and CSS.
 
 \divider
 
-\cvevent{Email Widget}{Dallas School District}{}{}
+\cvproject{Email Widget}{Dallas School District}{}
 \github{mroley1/emailObscure}\\\smallskip
 Internal web tool that generates a line of HTML to be embedded in
 google sites. Provides functionality to automatically copy and hide email
@@ -174,25 +184,43 @@ addresses from scrapers.
 
 \divider
 
-\cvevent{Status Dashboard}{Personal Project}{}{}
+\cvproject{Status Dashboard}{Personal Project}{}
 \github{mroley1/minecraft_website} \\\smallskip
-Dashboard that gets information on minecraft servers running off
-of my personal Pteridactyl server and visualizes live data on their
+Dashboard that gets information on Minecraft servers running off
+of my personal Pterodactyl  server and visualizes live data on their
 CPU, RAM, and disk usage.
+
+\divider
+
+\cvproject{Personal Website}{Personal Project}{}
+\github{mroley1/mroley1.github.io} \\\smallskip
+Website written in vanilla HTML, JavaScript, and CSS.
+Used to promote myself and showcase my experience
+and projects.
 
 
 
 \smallskip
 \cvsection{Experience}
 
-\cvevent{Information Technology Specialist}{Dallas School District}{Feb 2020 -- August 2023}{Dallas, PA}
+\cvevent{Carpenter}{National Technical Institute for the Deaf Performing Arts}{Jan 2023 -- Present}{Rochester, NY}{}{}
 \begin{itemize}
-\item Configured network hardware for security system
-\item Prepared hardware for student and teacher use and solved connection and technology issues
-\item Recorded instructional videos on use of hardware for faculty and staff
-\item Developed tools and procedures to streamline IT tasks
-\item Managed small groups of aides through completion of IT projects
+\item Worked independently and collaboratively on multiple woodworking projects.
+\item Coordinated with both hearing and deaf co-workers.
+\item Assisted senior lighting and sound designers with theatre productions.
 \end{itemize}
+
+\divider
+
+\cvevent{Information Technology Specialist}{Dallas School District}{Feb 2020 -- August 2023}{Dallas, PA}{}{}
+\begin{itemize}
+\item Configured network hardware for security system.
+\item Prepared hardware for student and teacher use and solved connection and technology issues.
+\item Recorded instructional videos on use of hardware for faculty and staff.
+\item Developed tools and procedures to streamline IT tasks.
+\item Managed small groups of aides through completion of IT projects.
+\end{itemize}
+
 
 
 %%\switchcolumn
@@ -200,14 +228,14 @@ CPU, RAM, and disk usage.
 
 
 
-\cvsection{References}
-\columnratio{0.5}
+%\cvsection{References}
+%\columnratio{0.35}
 
-\begin{paracol}{2}
-\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
-\switchcolumn
-\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
-\end{paracol}
+%\begin{paracol}{2}
+%\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
+%\switchcolumn
+%\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
+%\end{paracol}
 
 % \cvref{name}{email}{mailing address}
 
