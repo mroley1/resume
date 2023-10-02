@@ -278,17 +278,18 @@
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
 
-\newcommand{\cvschool}[6]{%
+\newcommand{\cvschool}[7]{%
   {\large\color{emphasis}#1}
   \normalsize\smallskip\par
   \ifstrequal{#2}{}{}{
   \textbf{\color{accent}#2}
   \par
   \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.25\linewidth][l]{\faCalendar~#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.25\linewidth][l]{\faMapMarker~#4}}}%
-  \ifstrequal{#5}{}{}{{\small\makebox[0.25\linewidth][l]{\faAward~#5}}}%
-  \ifstrequal{#6}{}{}{{\small\makebox[0.25\linewidth][l]{\faScroll~#6}}}\par
+  \ifstrequal{#3}{}{}{{\small\makebox[0.23\linewidth][l]{\faCalendar~#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.18\linewidth][l]{\faMapMarker~#4}}}%
+  \ifstrequal{#5}{}{}{{\small\makebox[0.20\linewidth][l]{\faAward~#5}}}%
+  \ifstrequal{#6}{}{}{{\small\makebox[0.25\linewidth][l]{\faTheaterMasks~#6}}}%
+  \ifstrequal{#7}{}{}{{\small\makebox[0.16\linewidth][l]{\faScroll~#7}}}\par
   \smallskip\normalsize
 }
 
