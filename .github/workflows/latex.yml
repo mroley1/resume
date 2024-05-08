@@ -37,11 +37,11 @@ jobs:
 
       - name: install additional dependencies
         run: |
-          tlmgr init-usertree
-          tlmgr option repository ctan
           wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
           sudo env PATH="$PATH" tlmgr update --self
           sh update-tlmgr-latest.sh
+          tlmgr init-usertree
+          tlmgr option repository ctan
           tlmgr install scheme-full
 
       - name: complie resume
