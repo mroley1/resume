@@ -36,7 +36,9 @@ jobs:
         run: sudo apt install texlive
 
       - name: install additional dependencies
-        run: tlmgr --usermode install pdfpages
+        run: |
+          tlmgr init-usertree
+          tlmgr install pdfpages
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
