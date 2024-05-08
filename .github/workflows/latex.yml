@@ -37,6 +37,8 @@ jobs:
 
       - name: install additional dependencies
         run: |
+          mkdir texmf
+          tlmgr init-usertree
           tlmgr option repository ctan
           tlmgr update --all
 
