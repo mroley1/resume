@@ -37,8 +37,8 @@ jobs:
 
       - name: install additional dependencies
         run: |
-          tlmgr init-usertree
-          tlmgr install pdfpages
+          tlmgr option repository ctan
+          tlmgr update --all
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
