@@ -40,7 +40,7 @@ jobs:
           tlmgr init-usertree
           tlmgr option repository ctan
           wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
-          sudo env PATH="$PATH" tlmgr update --sel
+          sudo env PATH="$PATH" tlmgr update --self
           sh update-tlmgr-latest.sh
           tlmgr install scheme-full
 
