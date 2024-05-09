@@ -38,13 +38,11 @@ jobs:
       - name: install additional dependencies
         run: |
           wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
-          sudo env PATH="$PATH" tlmgr update --self
           sh update-tlmgr-latest.sh
-          mkdir texmf
-          tlmgr init-usertree
+          sudo tlmgr init-usertree
           echo initilized
-          tlmgr option repository ctan
-          tlmgr install scheme-full
+          sudo tlmgr option repository ctan
+          sudo tlmgr install scheme-full
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
