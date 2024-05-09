@@ -37,7 +37,6 @@ jobs:
 
       - name: install additional dependencies
         run: |
-          sudo echo ~/.profile < PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH; export PATH MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH; export MANPATH INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH; export INFOPATH
           alias psudo='sudo env PATH="$PATH"'
           wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
           psudo sh update-tlmgr-latest.sh
