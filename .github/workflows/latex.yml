@@ -37,12 +37,14 @@ jobs:
 
       - name: install additional dependencies
         run: |
+          sudo echo ~/.profile < PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH; export PATH MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH; export MANPATH INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+          alias psudo='sudo env PATH="$PATH"'
           wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
-          sh update-tlmgr-latest.sh
-          sudo tlmgr init-usertree
+          psudo sh update-tlmgr-latest.sh
+          psudo tlmgr init-usertree
           echo initilized
-          sudo tlmgr option repository ctan
-          sudo tlmgr install scheme-full
+          psudo tlmgr option repository ctan
+          psudo tlmgr install scheme-full
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
