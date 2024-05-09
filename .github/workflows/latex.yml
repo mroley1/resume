@@ -38,7 +38,7 @@ jobs:
       - name: install additional dependencies
         run: |
           alias psudo='sudo env PATH="$PATH"'
-          wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
+          wget --no-check-certificate "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
           psudo sh update-tlmgr-latest.sh
           psudo tlmgr init-usertree
           echo initilized
