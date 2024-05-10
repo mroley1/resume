@@ -37,7 +37,7 @@ jobs:
           sudo apt install wget perl-tk
           wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
           tar -xf install-tl-unx.tar.gz
-          cd install-tl-20220211
+          find . -maxdepth 1 -name "install-tl-\d*" -type d -exec cd {} \;
           sudo ./install-tl
           cat >> ~/.profile << EOF
           export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH    
