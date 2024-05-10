@@ -38,12 +38,11 @@ jobs:
       - name: install additional dependencies
         run: |
           cd ~
-          wget --no-check-certificate "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh"
-          sh update-tlmgr-latest.sh
-          tlmgr init-usertree
-          echo initilized
-          tlmgr option repository ctan
-          tlmgr install scheme-full
+          cat >> ./profile << EOF
+          PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH; export PATH 
+          MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH; export MANPATH 
+          INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+          EOF
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
