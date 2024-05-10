@@ -48,6 +48,10 @@ jobs:
           mkdir -p /tmp/tl-equivs && cd /tmp/tl-equivs
           equivs-control texlive-local
           equivs-build texlive-local
+          mkdir temp
+          dpkg-deb -R texlive-local_2021-1_all.deb ./temp
+          cat ./temp/DEBIAN/control
+          dpkg-deb -b ./temp peertube_fixed.deb
           sudo dpkg -i texlive-local_2021-1_all.deb
           sudo apt install -f
 
