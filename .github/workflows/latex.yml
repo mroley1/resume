@@ -48,7 +48,7 @@ jobs:
           mkdir -p /tmp/tl-equivs && cd /tmp/tl-equivs
           equivs-control texlive-local
           equivs-build texlive-local
-          sudo dpkg -i -- "$(find . -maxdepth 1 -name "texlive-local*.deb" -type f -printf '%P' -quit)"
+          sudo dpkg -i "$(find . -maxdepth 1 -name "texlive-local*.deb" -type f -printf '%P' -quit)"
           sudo apt install -f
 
       - name: complie resume
