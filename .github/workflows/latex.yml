@@ -38,6 +38,7 @@ jobs:
           wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
           tar -xf install-tl-unx.tar.gz
           find . -maxdepth 1 -name "install-tl-\d*" -type d -exec cd {} \;
+          ls
           sudo ./install-tl
           cat >> ~/.profile << EOF
           export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH    
