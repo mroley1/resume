@@ -50,7 +50,7 @@ jobs:
           echo "$(wget -O texlive-local https://tug.org/texlive/files/debian-equivs-2021-ex.txt)" > texlive-local
           equivs-build texlive-local
           sudo dpkg -i "$(find . -maxdepth 1 -name "equivs-dummy*.deb" -type f -printf '%P' -quit)"
-          sudo apt install -f
+          sudo apt install texlive-full
 
       - name: complie resume
         run: pdflatex matthew_oley_resume.tex
