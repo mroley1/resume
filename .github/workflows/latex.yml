@@ -33,27 +33,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: install texlive
-        run: |
-          sudo apt install wget perl-tk
-          wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-          tar -xf install-tl-unx.tar.gz
-          cd -- "$(find . -maxdepth 1 -name "install-tl-*" -type d -printf '%P' -quit)"
-          sudo ./install-tl
-          cat >> ~/.profile << EOF
-          export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH    
-          export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
-          export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
-          EOF
-          sudo apt install equivs --no-install-recommends freeglut3
-          mkdir -p /tmp/tl-equivs && cd /tmp/tl-equivs
-          equivs-control texlive-local
-          echo "$(wget -O texlive-local https://tug.org/texlive/files/debian-equivs-2021-ex.txt)" > texlive-local
-          equivs-build texlive-local
-          sudo dpkg -i "$(find . -maxdepth 1 -name "equivs-dummy*.deb" -type f -printf '%P' -quit)"
-          sudo apt install texlive-full
+        run: sudo apt install texlive-full
 
       - name: complie resume
-        run: pdflatex matthew_oley_resume.tex
+        run: |
+         mkdir public
+         pdflatex -output-directory public matthew_oley_resume.tex
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -61,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './matthew_oley_resume.pdf'
+          path: './public'
 
       - name: Deploy to GitHub Pages
         id: deployment
