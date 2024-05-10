@@ -49,7 +49,14 @@ jobs:
           equivs-control texlive-local
           equivs-build texlive-local
           mkdir temp
+          echo "starting"
           dpkg-deb -R texlive-local_2021-1_all.deb ./temp
+          ls ./temp
+          echo "Debian"
+          ls ./temp/DEBIAN
+          echo "control"
+          ls ./temp/DEBIAN.control
+          echo "file"
           cat ./temp/DEBIAN/control
           dpkg-deb -b ./temp peertube_fixed.deb
           sudo dpkg -i texlive-local_2021-1_all.deb
