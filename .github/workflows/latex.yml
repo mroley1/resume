@@ -39,13 +39,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: install poppler-utils
-        run: apt install poppler-utils
+        run: apt-get update && apt-get install -y poppler-utils
 
       - name: compile resume
         run: |
          mkdir public
          pdflatex -output-directory public $NAME_OF_LATEX_FILE.tex
-         pdftoppm public/$NAME_OF_LATEX_FILE.pdf $NAME_OF_LATEX_FILE -png
+         pdftoppm public/$NAME_OF_LATEX_FILE.pdf public/$NAME_OF_LATEX_FILE -png
 
       - name: add index.html
         run: mv ./index.html ./public/index.html
