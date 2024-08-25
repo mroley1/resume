@@ -45,7 +45,8 @@ jobs:
         run: |
          mkdir public
          pdflatex -output-directory public $NAME_OF_LATEX_FILE.tex
-         pdftoppm public/$NAME_OF_LATEX_FILE.pdf public/$NAME_OF_LATEX_FILE -png
+         pdftoppm public/$NAME_OF_LATEX_FILE.pdf $NAME_OF_LATEX_FILE -png
+         mv $NAME_OF_LATEX_FILE.png puublic
 
       - name: add index.html
         run: mv ./index.html ./public/index.html
