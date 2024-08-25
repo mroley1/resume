@@ -32,12 +32,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/islandoftex/images/texlive:latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: install texlive
-        run: sudo apt install texlive-full poppler-utils
+      - name: install poppler-utils
+        run: sudo apt install poppler-utils
 
       - name: compile resume
         run: |
