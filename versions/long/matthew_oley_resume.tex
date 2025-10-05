@@ -1,0 +1,342 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.0cm,bottom=1.0cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex{}
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{333333}
+\definecolor{drkpurple}{HTML}{7184b3}
+\definecolor{lgtpurple}{HTML}{9baedf}
+\definecolor{lgttan}{HTML}{eed6a4}
+\definecolor{drktan}{HTML}{e1bd60}
+\definecolor{brown}{HTML}{b58837}
+
+\definecolor{DarkTeal}{HTML}{235a54}
+\definecolor{DarkGreen}{HTML}{205439}
+\definecolor{Blue}{HTML}{4f6285}
+\definecolor{Teal}{HTML}{29bdad}
+\definecolor{Green}{HTML}{375a3a}
+\definecolor{Purple}{HTML}{604873}
+\definecolor{Caramel}{HTML}{5f3c18}
+\definecolor{BrightYellow}{HTML}{ffc313}
+
+
+\colorlet{tagline}{Green}
+\colorlet{heading}{DarkGreen}
+\colorlet{headingrule}{BrightYellow}
+\colorlet{subheading}{Green}
+\colorlet{accent}{Green}
+
+%\colorlet{emphasis}{brown}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+%%\input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+%%\addbibresource{sample.bib}
+
+\begin{document}
+\name{Matthew Oley}
+\tagline{Fourth Year Student at RIT seeking Spring CO-OP}
+%% You can add multiple photos on the left or right
+%\photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{matthew@mroley.dev}
+  %\phone{570-690-1700}
+  %\mailaddress{Åddrésş, Street, 00000 Cóuntry}
+  \location{Dallas, PA}
+  \homepage{www.mroley.dev}
+  %\twitter{@twitterhandle}
+  \linkedin{mroley}
+  \github{mroley1}
+  %\orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader{}
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+%%\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+%%\begin{paracol}{1}
+
+
+\cvsection{Education}
+
+\cvschool{Bachelor of Science in Software Engineering, Minor in Web Development}{Rochester Institute of Technology}{Anticipated May 2027}{Rochester, NY}{Honors Program}{Performing Arts Scholar}{3.67 GPA}
+
+
+
+\smallskip
+
+\cvsection{Leadership and Involvement}
+\columnratio{0.25}
+\begin{paracol}{4}
+\cvachievement{\faCompass}{Boy Scouts of\newline America}{Eagle Scout}
+\switchcolumn[1]
+\cvachievement{\faCompactDisc}{Computer\newline Science House}{Member}
+\switchcolumn[2]
+\cvachievement{\faAward}{RIT Honors\newline Program}{Member}
+\switchcolumn[3]
+\cvachievement{\faCode}{TEDxRIT}{Web Designer}
+%%begin novalidate
+\end{paracol}
+%%end novalidate
+
+\cvsection{Projects}
+
+\cvproject{Online Grimoire}{Personal Project}{}
+\github{mroley1/Online-Grimoire} \\\smallskip
+Web tool to emulate the game board of the social deduction game \href{https://bloodontheclocktower.com/}{Blood on the Clocktower}\@. Built using vanilla JavaScript and CSS and deployed on an OKD Kubernetes cluster\@.
+
+\divider{}
+
+\cvproject{Twilight}{Ongoing Personal Project}{}
+\github{mroley1/twilight} \\\smallskip
+A Dungeons and Dragons map creation tool that enables a user to occlude parts of the map during gameplay\@. Made with Angular 18.2\@.
+
+\divider{}
+
+\cvproject{Clocktower}{Ongoing Personal Project}{}
+\github{mroley1/clocktower} \\\smallskip
+Rewrite of Online Grimoire to support more online features, 
+higher stability and more intuitive controls\@. Built around
+React with a custom data model to improve efficiency\@.
+
+\divider{}
+
+\cvproject{Personal Website}{Personal Project}{}
+\github{mroley1/mroley1.github.io} \\\smallskip
+Website written in vanilla HTML, JavaScript, and CSS\@.
+Used to promote myself and showcase my experience
+and projects\@.
+
+\divider{}
+
+\cvproject{Dots}{Personal Project}{}
+\github{mroley1/dots} \\\smallskip
+Script that converts images into an ASCII representation based
+on contrast using braille characters\@.
+
+\divider{}
+
+\cvproject{Pong-Web}{Personal Project}{}
+\github{mroley1/pong-web} \\\smallskip
+Interactive website written in vanilla HTML, JavaScript, and CSS\@.
+Demonstrates modualar JavaScript principles and web API usage\@.
+
+\smallskip
+
+
+\cvsection{Skills and Technologies}
+
+\cvtag{Web Development}
+\cvtag{ASP.NET}
+\cvtag{React}
+\cvtag{Angular}
+\cvtag{Kubernetes}
+\cvtag{SQL}
+\cvtag{Agile}
+\cvtag{GIT}
+\cvtag{Docker}
+%\cvtag{UML and ER diagramming}
+\\\smallskip
+\cvtag{JavaScript}
+\cvtag{TypeScript}
+\cvtag{C\#}
+\cvtag{HTML}
+\cvtag{CSS}
+\cvtag{SASS}
+\cvtag{Java}
+\cvtag{Python}
+\cvtag{Rust}
+\cvtag{C/C++}
+\\\smallskip
+\cvtag{Communication}
+\cvtag{Problem-solving}
+\cvtag{Adaptability}
+\cvtag{Organization}
+\cvtag{Leadership}
+
+\medskip
+\medskip
+\medskip
+\medskip
+\medskip
+
+
+
+\smallskip
+\cvsection{Experience}
+
+\cvevent{Software Engineering Co-Op}{Benco Dental}{Jun 2025 --- Aug 2025}{Pittston, PA}{}{}
+\begin{itemize}
+\item Improved efficiency of production systems by 20\% by altering SQL procedures and data mappings.
+\item Implemented React components that eagerly load and render data from parallel API calls.
+\item Developed in-house scripts to generate entity framework configurations from existing database schemas.
+\item Wrote unit tests and functional tests for all contributed code.
+\end{itemize}
+
+\divider
+
+\cvevent{Software Development Co-Op}{Emerson Electric Professional Tools Software Solutions}{Aug 2024 --- Nov 2024}{Elyria, OH}{}{}
+\begin{itemize}
+\item Developed and unit tested development tasks in .net framework.
+\item Participated in requirements gathering and breakdown sessions with marketing and development teams.
+\item Designed and Edited MSSQL stored procedures and DBMS configurations.
+\item Brought website pages into compliance with modern web standards and ADA guidelines.
+\end{itemize}
+
+\divider{}
+
+\cvevent{Software Engineer}{Booz Allen Hamilton}{Jun 2024 --- Aug 2024}{Annapolis Junction, MD}{}{}
+\begin{itemize}
+\item Developed a machine-learning-driven audio processing and analysis platform for acoustic keylogging.
+\item Designed and implemented responsive mobile-first user interface.
+\item Leveraged automated testing, CI/CD, and containerization to engineer performant and maintainable code.
+\item Presented capability to company executives with a live demonstration.
+\end{itemize}
+
+\divider
+
+\cvevent{Carpenter / Electrician}{National Technical Institute for the Deaf --- Department for Performing Arts}{Jan 2023 --- Present}{Rochester, NY}{}{}
+\begin{itemize}
+\item Worked independently and collaboratively on multiple woodworking projects.
+\item Learned basic sign language in order to communicate with deaf co-workers.
+\item Assisted senior lighting and sound designers set up and run theatre productions.
+\item Coordinated back-stage operations two variety shows as a stage manager.
+\end{itemize}
+
+\divider
+
+\cvevent{Information Technology Specialist}{Dallas School District}{Feb 2020 --- August 2023}{Dallas, PA}{}{}
+\begin{itemize}
+\item Configured network hardware for security system.
+% \item Prepared hardware for student and teacher use and solved connection and technology issues.
+\item Recorded instructional videos on use of hardware for faculty and staff.
+\item Developed tools and procedures to streamline IT tasks.
+\item Managed small groups of aides through completion of IT projects.
+\end{itemize}
+
+
+
+
+
+
+
+%%\switchcolumn
+
+
+
+
+%\cvsection{References}
+%\columnratio{0.35}
+%\cvsection{References}
+%\columnratio{0.35}
+
+%\begin{paracol}{2}
+%\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
+%\switchcolumn
+%\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
+%\end{paracol}
+%\begin{paracol}{2}
+%\cvref{Bill Gartrell}{Dallas School District}{bgartrell@dsdhs.com}
+%\switchcolumn
+%\cvref{Amy Wall}{Shavertown United Methodist Church}{ajwall@comcast.net}
+%\end{paracol}
+
+% \cvref{name}{email}{mailing address}
+
+
+
+
+%\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+%{Address Line 1\\Address line 2}
+
+
+
+%%\end{paracol}
+
+
+\end{document}
