@@ -113,7 +113,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\textcolor{body!30}{\hdashrule[0.75ex]{\linewidth}{0.6pt}{0.5ex}}}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -306,15 +306,22 @@
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[6]{%
-  {\large\color{emphasis}#1}
-  \normalsize\smallskip\par
-  \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}
-  \par
-  \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.25\linewidth][l]{\faCalendar~#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.25\linewidth][l]{\faMapMarker~#4}}}%\par
-  \smallskip\normalsize
+  \makebox[0.5\linewidth][l]{
+    {\large\color{emphasis}#1}
+  }
+  \makebox[0.5\linewidth][r]{
+    \makebox[0.25\linewidth][l]{\ifstrequal{#3}{}{}{{\small\faCalendar~#3}}}
+    \makebox[0.25\linewidth][l]{\ifstrequal{#4}{}{}{{\small\faMapMarker~#4}}}
+    %\makebox[0.25\linewidth][l]{\ifstrequal{#4}{}{}{{\small\faMapMarker~#4}}}
+  }
+  \normalsize
+  \makebox[0.5\linewidth][l]{
+    \ifstrequal{#2}{}{}{\textbf{\color{accent}#2}}
+  }
+  \makebox[0.5\linewidth][r]{
+    %\makebox[0.25\linewidth][l]{\ifstrequal{#3}{}{}{{\small\faCalendar~#3}}}
+  }
+  \normalsize
 }
 
 \newcommand{\cvachievement}[3]{%
